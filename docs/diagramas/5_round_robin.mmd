@@ -1,0 +1,14 @@
+flowchart TD
+    A([Inicio]) --> B[Admitir a la cola los que ya llegaron]
+    B --> C{¿Cola vacía?}
+    C -->|Sí, quedan por llegar| D[CPU ociosa hasta la próxima llegada]
+    D --> B
+    C -->|Sí, no queda nada| K([Calcular estadísticas])
+    C -->|No| E[Sacar el primero de la cola]
+    E --> F[Ejecutar el mínimo entre el quantum y lo que le falta]
+    F --> G[Admitir los que llegaron durante el turno]
+    G --> H{¿Terminó?}
+    H -->|Sí| I[Registrar su finalización]
+    H -->|No| J[Devolverlo al final de la cola]
+    I --> C
+    J --> C

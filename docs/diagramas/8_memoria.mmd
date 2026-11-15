@@ -1,0 +1,10 @@
+flowchart TD
+    A([Asignar N KB al proceso]) --> B[Buscar huecos libres de al menos N KB]
+    B --> C{¿Hay alguno?}
+    C -->|Sí| D[Elegir el más pequeño: mejor ajuste]
+    D --> E[Partir el hueco: N KB al proceso y el sobrante libre]
+    C -->|No| F{¿La memoria libre total alcanza?}
+    F -->|Sí| G[Rechazar por fragmentación externa]
+    F -->|No| H[Rechazar por falta de espacio]
+    I([Liberar al finalizar]) --> J[Marcar libre el bloque del proceso]
+    J --> K[Unir huecos libres vecinos]

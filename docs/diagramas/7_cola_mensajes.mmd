@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant P as Productor
+    participant Q as Cola de capacidad 2
+    participant C as Consumidor
+    P->>Q: poner mensaje 1
+    P->>Q: poner mensaje 2
+    Note over P,Q: cola llena, el productor espera
+    C->>Q: tomar mensaje 1
+    P->>Q: poner mensaje 3
+    C->>Q: tomar mensaje 2
+    C->>Q: tomar mensaje 3
+    P->>Q: poner marca de fin
+    C->>Q: tomar marca de fin y terminar

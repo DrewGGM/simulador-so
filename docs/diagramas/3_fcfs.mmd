@@ -1,0 +1,11 @@
+flowchart TD
+    A([Inicio]) --> B[Ordenar procesos por llegada y PID]
+    B --> C{¿Quedan procesos?}
+    C -->|No| H([Calcular estadísticas])
+    C -->|Sí| D[Tomar el siguiente proceso]
+    D --> E{¿Ya llegó?}
+    E -->|No| F[CPU ociosa hasta su llegada]
+    F --> G[Ejecutar toda su ráfaga]
+    E -->|Sí| G
+    G --> I[Registrar su finalización]
+    I --> C

@@ -1,0 +1,6 @@
+stateDiagram-v2
+    [*] --> Nuevo: crear proceso
+    Nuevo --> Listo: hay memoria y se asigna
+    Nuevo --> [*]: no hay memoria, se rechaza
+    Listo --> Terminado: finalizar y liberar memoria
+    Terminado --> [*]

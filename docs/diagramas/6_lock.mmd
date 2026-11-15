@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant H1 as Hilo 1
+    participant L as Lock
+    participant C as Contador compartido
+    participant H2 as Hilo 2
+    H1->>L: adquirir
+    L-->>H1: concedido
+    H2->>L: adquirir
+    Note over H2,L: espera bloqueado
+    H1->>C: leer valor
+    H1->>C: escribir valor + 1
+    H1->>L: liberar
+    L-->>H2: concedido
+    H2->>C: leer valor
+    H2->>C: escribir valor + 1
+    H2->>L: liberar

@@ -22,6 +22,29 @@ Para ver todo funcionando rápido, entre a **Procesos** y elija **Cargar caso de
 python -m unittest
 ```
 
+## Prácticas en Linux
+
+Cada práctica muestra sus comandos con el prompt y su salida real. Se corren desde la raíz del repositorio en una terminal de Linux o WSL:
+
+```bash
+bash linux/1_procesos.sh     # estados, árbol de procesos, señales y un zombie
+bash linux/2_prioridades.sh  # nice, renice y dos procesos que compiten por un núcleo
+bash linux/3_hilos.sh        # hilos de un proceso y la condición de carrera del simulador
+bash linux/4_permisos.sh     # umask, chmod y límites de un usuario sin privilegios
+bash linux/5_memoria.sh      # tamaño de página y asignación bajo demanda
+```
+
+## Documentos
+
+En `docs/` están los entregables en PDF y Word, las capturas reales en `docs/evidencias/` y los diagramas con su fuente Mermaid en `docs/diagramas/`.
+
+| Documento | Contenido |
+|---|---|
+| Proyecto SO - 1 Documento de diseño | Problema, objetivos, arquitectura, módulos, diagramas y pseudocódigo |
+| Proyecto SO - 2 Evidencias Linux y comparación | Capturas y explicación de las prácticas, y tabla de diferencias con el simulador |
+| Proyecto SO - 3 Informe final | Pruebas, resultados, dificultades y conclusiones |
+| Proyecto SO - Guía de estudio y sustentación | Conceptos, recorrido del código, guion de la demostración y preguntas probables |
+
 ## Estructura
 
 | Archivo | Responsabilidad |
@@ -34,6 +57,8 @@ python -m unittest
 | `simulador/memoria.py` | Memoria contigua con asignación por mejor ajuste y liberación que une huecos vecinos |
 | `simulador/archivos.py` | Crear, listar, leer, modificar y eliminar archivos en `carpeta_pruebas` |
 | `tests/` | Pruebas unitarias |
+| `linux/` | Scripts de las prácticas en Linux |
+| `docs/` | Entregables, capturas y diagramas |
 
 ## Decisiones del modelo
 

@@ -1,0 +1,10 @@
+flowchart TD
+    A([Inicio]) --> B{¿Quedan procesos pendientes?}
+    B -->|No| H([Calcular estadísticas])
+    B -->|Sí| C{¿Alguno ya llegó?}
+    C -->|No| D[CPU ociosa hasta la próxima llegada]
+    D --> B
+    C -->|Sí| E[Elegir la menor ráfaga entre los que llegaron]
+    E --> F[Ejecutar toda su ráfaga sin expulsarlo]
+    F --> G[Registrar su finalización]
+    G --> B

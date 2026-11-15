@@ -1,0 +1,9 @@
+flowchart TD
+    MAIN["main.py<br/>punto de entrada"] --> MENU["menu.py<br/>menú de consola"]
+    MENU --> PROC["procesos.py<br/>PCB y tabla de procesos"]
+    MENU --> PLAN["planificacion.py<br/>FCFS, SJF, Round Robin<br/>y estadísticas"]
+    MENU --> CONC["concurrencia.py<br/>hilos, Lock y cola de mensajes"]
+    MENU --> MEM["memoria.py<br/>mejor ajuste y liberación"]
+    MENU --> ARCH["archivos.py<br/>CRUD en carpeta_pruebas"]
+    PROC -->|asigna y libera memoria| MEM
+    PLAN -->|planifica los procesos activos| PROC
